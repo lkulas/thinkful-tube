@@ -15,11 +15,15 @@ function displayData(data) {
   const results = data.items.map(function(item, index) {
     return generateResult(item);
   });
-  $('.js-search-number').html(`<h2>Results:</h2>
-    <p>Showing ${data.pageInfo.resultsPerPage} of ${data.pageInfo.totalResults} total</p>`);
-  $('.js-search-number').prop('hidden', false);
-  $('.js-search-results').html(results);
-  $('.js-search-results').prop('hidden', false);
+  $('.js-search-number')
+  .html(`
+    <h2>Results:</h2>
+    <p>Showing ${data.pageInfo.resultsPerPage} of ${data.pageInfo.totalResults} total</p>`)
+  .prop('hidden', false);
+
+  $('.js-search-results')
+  .html(results)
+  .prop('hidden', false);
 }
 
 function generateResult(result) {
